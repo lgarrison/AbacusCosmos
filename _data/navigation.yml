@@ -1,0 +1,13 @@
+pages:
+
+- title: Home
+  url: index.html
+
+- title: Simulations
+  url: simulations.html
+
+- title: Download
+  url: download.html
+
+- title: Documentation
+  url: documentation.html

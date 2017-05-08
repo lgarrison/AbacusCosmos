@@ -1,0 +1,9 @@
+---
+---
+
+@import "{{ site.theme }}";
+
+.result li.active a {
+    color: lightgray;
+    cursor: default;
+  }

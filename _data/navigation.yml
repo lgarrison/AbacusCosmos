@@ -1,13 +1,13 @@
 pages:
 
 - title: Home
-  url: index.html
+  url: /
 
 - title: Simulations
-  url: simulations.html
+  url: /simulations/
 
 - title: Download
-  url: download.html
+  url: /download/
 
 - title: Documentation
-  url: documentation.html
+  url: /documentation/

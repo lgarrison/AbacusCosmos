@@ -23,12 +23,15 @@
         
         <nav>
         {% for item in site.data.navigation.pages %}
-            <a class="{% if item.url == page.url %}active{% endif %} page-link" href="{{ item.url }}">{{ item.title }}</a>
+            {% assign navurl = item.url | prepend:site.github.baseurl %}
+            <a class="page-link {% if navurl == page.url %}active{% endif %}" href="{{ navurl }}">{{ item.title }}</a>
         {% endfor %}
         </nav>
         
         <hr>
         <section id="main_content">
+          Current path: "{{ page.url }}"
+          <br>
           {{ content }}
         </section>
 

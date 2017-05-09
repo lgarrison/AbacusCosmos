@@ -3,3 +3,8 @@ description: A suite of cosmological N-body simulations
 show_downloads: false
 theme: jekyll-theme-tactile
 permalink: pretty
+
+# this will be overridden during deployment
+# shouldn't have to do this; might have something to do with the private repo?
+github:
+    baseurl: ""

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Locally serve the Jekyll site for development
-# just uses the first non-loopback IP
+# serves on all IPs to facilitate SSH port forwarding
 
 set -v
-bundle exec jekyll serve -H $(hostname -I |cut -f1 -d' ') -w --config _config.yml,_config_dev.yml
+bundle exec jekyll serve -H '*' -P 4001 -w --config _config.yml,_config_dev.yml

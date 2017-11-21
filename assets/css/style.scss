@@ -15,6 +15,162 @@ a.page-link {
 
 a.active {
     color: black;
-  }
+}
+  
+body {
+    /*color: #6d6d6d;*/
+    color: black;
+}
+
+.inner { width: 60%; margin: 0 auto; }
 
 #downloads {float: right;}
+
+ol, ul { list-style: inside; }
+/*ul, ol, dl { margin-bottom: 0px; }*/
+//ul ul { margin-bottom: 0px; }
+ul li { list-style-position: inside; margin-left: 20px; padding-left: 0px; }
+//ul li { list-style: disc; }
+h3, h4, h5 {color: black; }
+table, th, td {border: 2px solid black; padding: 5px; margin: 10px; width: 20%; margin-left: auto; margin-right: auto}
+table { width: 50%; margin-left: auto; margin-right: auto}
+
+#container {background: white}
+body { background: white; text-shadow: none}
+
+.checkbox-header {
+    width: 25%;
+    display: inline-block;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    vertical-align: top;
+}
+.checkbox-group {
+    text-align: left;
+    padding: 0px;
+}
+.checkbox-group#redshifts {
+    column-count: 2;
+}
+
+.checkbox-group li {
+    list-style: none;
+}
+
+.checkbox-group ul {
+    margin: 0px;
+}
+
+/* center h2 labels? */
+.checkbox-group h2 {
+    text-align: center;
+}
+.checkbox-group label {
+     white-space: nowrap;
+}
+
+#regex-builder {
+    margin: auto;
+    text-align: center;
+}
+#wget-command {
+    padding: 10px;
+    margin: 0px;
+    margin-right: 0px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    font-family: monospace;
+    color: #f2f2f2;
+    background-color: #303030;
+    /*wrap: off;*/
+    overflow-x: scroll;
+    overflow-y: hidden;
+    
+    width: 100%;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+}
+
+#checkbox-columns {
+    column-count: 1;
+}
+
+.chk {
+}
+
+.copy-button{
+    margin: 0px;
+    margin-left: 0px;
+    padding: 0px;
+    //border: 0px;
+    
+    position:absolute;
+    bottom:10px;
+    left:100%;
+    width: 70px;
+    height: 70px;
+}
+
+#text-and-button {
+    display:inline-block;
+    position:relative;
+    width: 80%;
+}
+
+.fn {
+    font-size: 24px;
+}
+
+
+ul:not(.normal){
+    margin: 0px 0px 0px 20px; 
+    list-style: none; line-height: 2em;
+    li{
+        position: relative;
+        list-style: none;
+        &:before{
+            position: absolute;
+            left: -15px;
+            top: 0px;
+            content: '';
+            display: block;
+            border-left: 2px solid #000;
+            height: 1em;
+            border-bottom: 2px solid #000;
+            width: 10px;
+        }
+
+        &:after{
+            position: absolute;
+            left: -15px;
+            bottom: -7px;
+            content: '';
+            display: block;
+            border-left: 2px solid #000;
+            height: 100%;
+        }
+
+
+       &:last-child{
+          &:after{ display: none }
+        }
+    }
+}
+
+// Select the first element of directory tree lists
+section>ul:not(.normal)>li:first-child{
+  margin: 0px 0px 0px -20px;
+  &:before{
+    display: none;
+  }
+
+  &:after{
+    display: none;
+  }
+}
+
+ul:not(.normal) code {
+    font-weight: bold;
+}

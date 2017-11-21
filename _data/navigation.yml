@@ -9,5 +9,23 @@ pages:
 - title: Download
   url: /download/
 
-- title: Documentation
-  url: /documentation/
+- title: Data Specifications
+  url: /data_specifications/
+  
+- title: Code Examples
+  url: /code/
+  
+- title: Papers & Misc
+  url: /papers/
+
+#subpages:
+#    - title: Friends-of-friends halos
+#      url: /fof/
+#    - title: Rockstar halos
+#      url: /rockstar/
+#    - title: Power spectrum
+#      url: /power/
+#    - title: Papers
+#      url: /papers/
+#    - title: Code
+#      url: /code/

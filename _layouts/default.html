@@ -17,6 +17,7 @@
     <script type="text/javascript" async
       src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
     <title>{{ site.title | default: site.github.repository_name }} </title>
   </head>
 
@@ -73,5 +74,10 @@
         ga('send', 'pageview');
       </script>
     {% endif %}
+    
+    <script>
+    anchors.add('h1');
+    anchors.add('h2');
+    </script>
   </body>
 </html>

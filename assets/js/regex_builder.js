@@ -35,6 +35,7 @@ function link_checkboxes(parent_id, child_name){
 }
 
 function build_regex() {
+    //console.log('===============');
     // 'this' refers to the current checkbox in the EventListener model
     // but we'll probably be iterating over all checkboxes anyway
     var boxes = document.getElementsByClassName('chk');
@@ -62,15 +63,15 @@ function build_regex() {
     for(var i = 0; i < prod_boxes.length; i++) {
         var box = prod_boxes[i];
         var product = box.getAttribute("data-product");
-        //console.log(product + ', ' + box.checked);
+        //console.log('Product: ' + product + '; Checked: ' + box.checked);
         if(box.checked){
             //alert(product);
             regex += "|_" + product + "/$";
             
             // Add a reject regex if any product families have unselected files
             var sub_boxes = document.getElementsByName(box.id + "_sub");
-            for(var i = 0; i < sub_boxes.length; i++) {
-                var subbox = sub_boxes[i];
+            for(var j = 0; j < sub_boxes.length; j++) {
+                var subbox = sub_boxes[j];
                 if(!subbox.checked){
                     var fn = subbox.getAttribute("data-fn");
                     var pattern = product + '/.*/' + fn
@@ -105,4 +106,5 @@ function build_regex() {
     // and display it
     var textbox = document.getElementById("wget-command");
     textbox.value = command;
+    //console.log('===============');
 }

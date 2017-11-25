@@ -12,7 +12,7 @@ We would like to thank Harvard Research Computing for their assistance in hostin
 # Command-line Builder
 <script src="{{ site.baseurl }}/assets/js/clipboard.min.js"></script>
 <script>
-new Clipboard('.btn');
+new Clipboard('.copy-button');
 </script>
 
 <div id="regex-builder">
@@ -22,7 +22,7 @@ new Clipboard('.btn');
 <!-- Trigger -->
 <br>
 <button class="copy-button" type="button" data-clipboard-target="#wget-command">
-    <img class="clippy" src="{{ site.baseurl }}/assets/images/clippy.svg" width="30" alt="Copy to clipboard">
+    <img class="clippy" src="{{ site.baseurl }}/assets/images/clippy.svg" width="30" alt="Copy to clipboard"><br>Copy
 </button>
 </div>
 <br>

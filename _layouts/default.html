@@ -26,8 +26,8 @@
       <div class="inner">
 
         <header>
-          <h1>{{ site.title | default: site.github.repository_name }}</h1>
-          <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+          <h1 class="no-anchor">{{ site.title | default: site.github.repository_name }}</h1>
+          <h2 class="no-anchor">{{ site.description | default: site.github.project_tagline }}</h2>
         </header>
         
         <nav>
@@ -76,8 +76,8 @@
     {% endif %}
     
     <script>
-    anchors.add('h1');
-    anchors.add('h2');
+    anchors.add('h1:not(.no-anchor)');
+    anchors.add('h2:not(.no-anchor)');
     </script>
   </body>
 </html>

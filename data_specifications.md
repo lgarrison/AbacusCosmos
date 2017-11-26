@@ -118,7 +118,7 @@ The parameters that FoF was invoked with.  The most important parameters are doc
 
 
 ## Units
-All distances are comoving in the domain [-`BoxSize`/2, `BoxSize`/2), and all velocities are proper.
+All distances are comoving in the domain [-`BoxSize`/2, `BoxSize`/2), and all velocities are proper.  See the Rockstar unit notes for information about comparing FoF positions to Rockstar positions.
 
 
 # Rockstar halos
@@ -169,6 +169,16 @@ for the exact definition of a quantity, however.
 <li>idx, i_so, and i_ph are internal debugging quantities</li>
 <li>Np is an internal debugging quantity.</li>
 </ul>
+
+The Rockstar halo positions are in the domain [0, `BoxSize`).  Rockstar subsample particle positions may be negative if the halo is near the edge of the box.  Applying a periodic wrap (pos % BoxSize) will bring the particle positions back to the same domain as the halos.
+
+A related issue is that Rockstar takes the Abacus particle positions modulo the box size, since the original particles span [-`BoxSize`/2, `BoxSize`/2) but Rockstar wants to work in [0, `BoxSize`).  FoF works in native Abacus units and does not do this conversion.  If you want to compare halos between Rockstar and FoF, you will need to apply the same unit conversion.  In the forward direction, one way to do this is as follows:
+
+\\( \mathbf{x}\_\mathrm{Rockstar} = \mathbf{x}\_\mathrm{FoF} \bmod L \\)
+
+In the backwards direction:
+
+\\( \mathbf{x}\_\mathrm{FoF} = \mathbf{x}\_\mathrm{Rockstar} - L\, \mathrm{round}(\mathbf{x}\_\mathrm{Rockstar}/L)\\)
 
 ## SO halos
 Rockstar can also produce spherical overdensity masses for the same set of halo centers that the main code uses. That is, no new halo finding is done, but new masses are computed that include all unbound particles.  We compute these masses and store them in the `m_SO` and `alt_m_SO` fields.

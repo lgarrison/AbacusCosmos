@@ -28,7 +28,7 @@ new Clipboard('.copy-button');
 <br>
 
 <div class="checkbox-header">
-<h2>Simulation Sets</h2>
+<h2 class="no-anchor">Simulation Sets</h2>
 <form name="sims" class="checkbox-group">
 <!-- note: maybe could generate this from yml? -->
 <label><input class="chk" type="checkbox" data-path="AbacusCosmos_1100box_products" checked /> AbacusCosmos_1100box </label>
@@ -39,7 +39,7 @@ new Clipboard('.copy-button');
 </div>
 
 <div class="checkbox-header">
-<h2>Data Products</h2>
+<h2 class="no-anchor">Data Products</h2>
 <form name="products" class="checkbox-group">
 <label><input class="chk" type="checkbox" data-product="power" checked /> Matter power spectrum </label>
 <label><input id="fofchk" class="chk" type="checkbox" data-product="FoF_halos"/> Friends-of-friends halos</label>
@@ -60,7 +60,7 @@ new Clipboard('.copy-button');
 </div>
 
 <div class="checkbox-header">
-<h2>Redshifts</h2>
+<h2 class="no-anchor">Redshifts</h2>
 <form name="redshifts" class="checkbox-group" id="redshifts">
 <label><input class="chk" type="checkbox" data-redshift="z0.100"/> z = 0.1</label>
 <label><input class="chk" type="checkbox" data-redshift="z0.300"/> z = 0.3 </label>

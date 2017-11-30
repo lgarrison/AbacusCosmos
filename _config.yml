@@ -3,3 +3,8 @@ description: A suite of cosmological N-body simulations
 show_downloads: false
 theme: jekyll-theme-tactile
 permalink: pretty
+author: Lehman Garrison
+logo: /icon.svg
+image: /abacus_slice.png
+plugins:
+  - jekyll-seo-tag

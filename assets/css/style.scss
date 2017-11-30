@@ -190,7 +190,7 @@ body { background: white; text-shadow: none}
 
     > :not(.language-python){
         //margin-left: 5%;
-        & > .highlight {
+        .highlight {
             background: white;
             //margin-left: 5%;
             & code {

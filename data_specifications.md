@@ -9,10 +9,20 @@ but using it is completely optional.  If nothing else, it provides a concrete
 example of how to read the files, in case there is any ambiguity in the documentation
 below.
 
+Jump to:
+- [Friends-of-friends Halos](#friends-of-friends-halos)
+- [Rockstar Halos](#rockstar-halos)
+- [Particle Subsamples](#particle-subsamples)
+- [Power Spectra](#power-spectra)
+- [Info directory](#info-directory)
+- [Abacus Parameter and header files](#abacus-parameter-and-header-files)
+- [Important parameters](#abacus-parameter-and-header-files)
+
 # Friends-of-friends halos
 ## Directory structure
 The friends of friends (FoF) halos are located in the `SimName_FoF_halos` subdirectory of each simulation.  An example directory structure follows:
 
+<div markdown="1" class="tree">
 - `AbacusCosmos_1100box_products`
   - `AbacusCosmos_1100box_00_products`
     - `AbacusCosmos_1100box_00_FoF_halos`
@@ -25,6 +35,7 @@ The friends of friends (FoF) halos are located in the `SimName_FoF_halos` subdir
         - `particle_ids.tar.gz`: the corresponding particle IDs
         - `field_particles.tar.gz`: a 10% subsample of particle outside of halos
         - `field_ids.tar.gz`: the corresponding particle IDs
+</div>
         
 ## filename: <code class="fn">halos_N</code>
 
@@ -123,6 +134,7 @@ All distances are comoving in the domain [-`BoxSize`/2, `BoxSize`/2), and all ve
 
 # Rockstar halos
 The [Rockstar](https://bitbucket.org/gfcstanford/rockstar) halos are located in the `SimName_Rockstar_halos` subdirectory of each simulation.  An example directory structure follows:
+<div markdown="1" class="tree">
 - `AbacusCosmos_1100box_products`
   - `AbacusCosmos_1100box_00_products`
     - `AbacusCosmos_1100box_00_rockstar_halos`
@@ -132,17 +144,16 @@ The [Rockstar](https://bitbucket.org/gfcstanford/rockstar) halos are located in 
         - `rockstar.cfg`: the Rockstar configuration file
         - `header`: the Abacus parameter file describing this redshift slice
         - `particles.tar.gz`: a 10% subsample of particles inside halos
+</div>
 
 ## filename: <code class="fn">halos_M.N.h5</code>
 The Rockstar halos are stored in HDF5 files.  There is one dataset called `halos`.  The fields are identical to default Rockstar,
 with the following modifications:
-<ul class="normal">
-<li>We split <code>pos[6]</code> into <code>pos[3]</code> and <code>vel[3]</code></li>
-<li>We add the <code>parent_id</code> field. For subhalos, this is the id of the parent halo. For parent halos, this is -1.</li>
-<li>We add the <code>subsamp_start</code> and <code>subsamp_len</code> fields, corresponding to the starting index and count of the halo particle subsample.</li>
-<li>We add <code>m_SO</code> and <code>alt_m_SO[4]</code> for the spherical overdensity masses.</li>
-<li>We add <code>N</code>, <code>alt_N[4]</code>, <code>N_SO</code>, and <code>alt_N_SO[4]</code>: the particle counts corresponding to the mass values.</li>
-</ul>
+- We split `pos[6]` into `pos[3]` and `vel[3]`
+- We add the `parent_id` field. For subhalos, this is the id of the parent halo. For parent halos, this is -1.
+- We add the `subsamp_start` and `subsamp_len` fields, corresponding to the starting index and count of the halo particle subsample.
+- We add `m_SO` and `alt_m_SO[4]` for the spherical overdensity masses.
+- We add `N`, `alt_N[4]`, `N_SO`, and `alt_N_SO[4]`: the particle counts corresponding to the mass values.
 
 The `header` file is also stored as an HDF5 dataset attribute, but this is purely for convenience; it contains the same information as the actual header file.
 
@@ -158,17 +169,15 @@ The Rockstar configuration file.  See the [Rockstar documentation](https://bitbu
 ## Units
 For convenience, we copy the Rockstar notes about units from the ASCII header here.  You may need to consult the [Rockstar documentation or source code](https://bitbucket.org/gfcstanford/rockstar)
 for the exact definition of a quantity, however.
-<ul class="normal">
-<li>Masses in Msun / h</li>
-<li>Positions in Mpc / h (comoving)</li>
-<li>Velocities in km / s (physical, peculiar)</li>
-<li>Halo Distances, Lengths, and Radii in kpc / h (comoving)</li>
-<li>Angular Momenta in (Msun/h) * (Mpc/h)*km/s (physical)</li>
-<li>Spins are dimensionless</li>
-<li>Total energy in (Msun/h) * (km/s)^2 (physical)</li>
-<li>idx, i_so, and i_ph are internal debugging quantities</li>
-<li>Np is an internal debugging quantity.</li>
-</ul>
+- Masses in Msun / h
+- Positions in Mpc / h (comoving)
+- Velocities in km / s (physical, peculiar)
+- Halo Distances, Lengths, and Radii in kpc / h (comoving)
+- Angular Momenta in (Msun/h) * (Mpc/h)*km/s (physical)
+- Spins are dimensionless
+- Total energy in (Msun/h) * (km/s)^2 (physical)
+- idx, i_so, and i_ph are internal debugging quantities
+- Np is an internal debugging quantity.
 
 The Rockstar halo positions are in the domain [0, `BoxSize`).  Rockstar subsample particle positions may be negative if the halo is near the edge of the box.  Applying a periodic wrap (pos % BoxSize) will bring the particle positions back to the same domain as the halos.
 
@@ -199,6 +208,7 @@ We do not include a field subsample from Rockstar, as it would increase the data
 
 # Power spectra
 Power spectra from each redshift slice are located in the `SimName_power` subdirectory of each simulation.  An example directory structure follows:
+<div markdown="1" class="tree">
 - `AbacusCosmos_1100box_products`
   - `AbacusCosmos_1100box_00_products`
     - `AbacusCosmos_1100box_00_power`
@@ -206,6 +216,7 @@ Power spectra from each redshift slice are located in the `SimName_power` subdir
       - `z0.300`
         - `power_nfft2048.csv`: The measured power spectrum
         - `header`: the Abacus parameter file describing this redshift slice
+</div>
         
 The power spectrum file `power_nfft2048.csv` is a comma separated values file with three columns:
 wavenumber \\(k\\) [h/Mpc], power \\(P(k)\\) [(Mpc/h)^3], and number of modes \\(N_\mathrm{modes}\\).  The suffix `_nfft2048`
@@ -219,6 +230,7 @@ column of the csv file.
 
 # <code class="fn">info</code> directory
 Every data product directory contains an `info` directory (alongside the redshift directories) with various input and output files.  An example `info` directory structure is shown here:
+<div markdown="1" class="tree">
 - `info`
     - `abacus.par`: the main Abacus parameter file
     - `abacus_params.par2`: level 2 parameter file that gets processed into the level 1 `abacus.par` file.  Useful for just seeing the parameters that vary among sims.
@@ -226,6 +238,7 @@ Every data product directory contains an `info` directory (alongside the redshif
     - `camb_matterpower.dat`: the main CAMB matter power spectrum; this is the input power spectrum to the zeldovich-PLT code.
     - `camb_params.ini`: the CAMB input file
     - `camb_transfer_out.dat`: various transfer functions that CAMB produces
+</div>
 
 # Abacus parameter and header files
 The parameter file `info/abacus.par` is the input configuration file to Abacus for the simulations.

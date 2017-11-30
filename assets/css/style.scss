@@ -35,6 +35,10 @@ h3, h4, h5 {color: black; }
 table, th, td {border: 2px solid black; padding: 5px; margin: 10px; width: 20%; margin-left: auto; margin-right: auto}
 table { width: 50%; margin-left: auto; margin-right: auto}
 
+p + ul {
+	margin-top: -20px
+}
+
 #container {background: white}
 body { background: white; text-shadow: none}
 
@@ -59,7 +63,7 @@ body { background: white; text-shadow: none}
 }
 
 .checkbox-group ul {
-    margin: 0px;
+    //margin: 0px;
 }
 
 /* center h2 labels? */
@@ -126,12 +130,13 @@ body { background: white; text-shadow: none}
 }
 
 
-ul:not(.normal){
+.tree > ul{
     margin: 0px 0px 0px 20px; 
     list-style: none; line-height: 2em;
     li{
         position: relative;
         list-style: none;
+		margin-left: 40px;
         &:before{
             position: absolute;
             left: -15px;
@@ -162,7 +167,7 @@ ul:not(.normal){
 }
 
 // Select the first element of directory tree lists
-section>ul:not(.normal)>li:first-child{
+.tree>ul>li:first-child{
   margin: 0px 0px 0px -20px;
   &:before{
     display: none;
@@ -173,6 +178,50 @@ section>ul:not(.normal)>li:first-child{
   }
 }
 
-ul:not(.normal) code {
+.tree > ul code {
     font-weight: bold;
+}
+
+// We want to differentiate input and output Jupyter notebook cells
+.jupyternb {
+    .highlighter-rouge.language-python > .highlight {
+        margin-bottom: 10px;
+    }
+
+    > :not(.language-python){
+        //margin-left: 5%;
+        & > .highlight {
+            background: white;
+            //margin-left: 5%;
+            & code {
+                background-color: white;
+                color: black;
+            }
+        }
+    }
+
+    > table{
+        overflow-x: auto;
+        display: block;
+        border: none;
+        //width: 100%;
+    }
+}
+
+.paper {
+	padding: 20px;
+	background-color: #303030;
+	color: #d0d0d0;
+	& > p {
+		margin-bottom: 0px;
+	}
+	
+	p + p {
+		margin-top: 20px;
+	}
+	margin-bottom: 20px;
+}
+
+form > ul + p{
+	margin-top: -20px;
 }

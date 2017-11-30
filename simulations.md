@@ -11,30 +11,6 @@ phase of the same cosmology; that is, an independent realization of the power sp
 
 # Simulation Sets
 
-<!---
-- ## AbacusCosmos_1100box
-  - 40 boxes of size 1100 Mpc/h and particle mass \\(\sim 4\times 10^{10}\ M_\odot\\)
-  - Different cosmologies centered on Planck 2015 with identical phases in the initial conditions
-  - <http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_1100box_products/>
-
-- ## AbacusCosmos_720box
-  - Same as `AbacusCosmos_1100box` above, but at higher mass resolution (\\(\sim 1\times 10^{10}\ M_\odot\\)) and smaller box size (720 Mpc/h)
-  - Note these are not "zoom-in" simulations of the larger boxes, but completely independent realizations of the power spectrum
-  - <http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_720box_products/>
-
-- ## emulator_planck_1100box
-  - 21 total boxes divided into two sets:
-    - 17 with identical fiducial cosmologies and different phases (useful for stacking volume)
-    - 4 boxes with single-parameter deviations from the Planck cosmology (useful for measuring derivatives)
-  - Box size 1100 Mpc/h and particle mass \\(\sim 4\times 10^{10}\ M_\odot\\)
-  - <http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_1100box_planck_products/>
-
-- ## emulator_planck_720box
-  - Same as `emulator_planck_1100box` above, but at higher mass resolution (\\(\sim 1\times 10^{10}\ M_\odot\\)) and smaller box size (720 Mpc/h)
-  - Note these are not "zoom-in" simulations of the larger boxes, but completely independent realizations of the power spectrum
-  - <http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_720box_planck_products/>
--->
-  
 | **Simulation Set Name** | **# of sims** | **Box Size [\\(\mathrm{Mpc}/h\\)]** | **\\(N_\mathrm{part}\\)** | **Particle Mass [\\(M_\odot/h\\)]** | **Cosmologies** | **Initial Phases** | **Output Redshifts** | **Notes** | **Browse** |
 |:-------------|--------------:|------------------------------------:|--------------------------:|:------------------------------------|:----------------|:-----------|:--------------|:----------|:-----------|
 | **AbacusCosmos_1100box** | 40 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Latin Hypercube centered on Planck 2015 | Matched | 1.5, 1.0, 0.7, 0.5, 0.3 | | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_1100box_products/) |
@@ -99,11 +75,10 @@ Some simulations are referred to as "phase-matched" in the initial conditions.  
 
 ## Re-generating ICs
 To re-generate the initial conditions for a given sim, make a copy of the `abacus.par` file from the simulation and pass it as the parameter file to the zeldovich-PLT code.  Most of the parameters will not need modification, but any parameters related to file paths will have to be modified to suit your system.  Specifically, the following will likely need to be updated:
-<ul class="normal">
-<li> <code>InitialConditionsDirectory</code>: The output directory for the IC files.</li>
-<li> <code>ZD_PLT_filename</code>: The PLT eigenmodes file.  This is included with the zeldovich-PLT code (probably <code>eigmodes128</code>).</li>
-<li> <code>ZD_Pk_filename</code>: The input power spectrum file (i.e. the CAMB output file).  This is included with each sim as <code>info/camb_matterpower.dat</code>.</li>
-</ul>
+
+- `InitialConditionsDirectory`: The output directory for the IC files.
+- `ZD_PLT_filename`: The PLT eigenmodes file.  This is included with the zeldovich-PLT code (probably `eigmodes128`).
+- `ZD_Pk_filename`: The input power spectrum file (i.e. the CAMB output file).  This is included with each sim as `info/camb_matterpower.dat`.
 
 ## Power Spectra
 We use CAMB to generate a linear \\(z=0\\) power spectrum for each cosmology in our grid.  We then scale the power spectrum back to \\(z_\mathrm{init}=49\\) by scaling \\(\sigma_8\\) by the ratio of the growth factors \\(D(z=49)/D(z=0)\\).  This \\(\sigma_8\\) is passed to zeldovich-PLT, which handles the re-normalization of the power spectrum.  The computation of the growth factors is done by Abacus's cosmology module, so it is consistent by construction with the simulation's cosmological evolution.  We only use massless neutrinos and include no cosmological neutrino density.  The exact CAMB inputs and outputs are available with each simulation (`info/camb_params.ini` and related `info/camb_*` files; see [Info Directory]({{ site.baseurl }}{% link data_specifications.md %}#info-directory)).

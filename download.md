@@ -38,24 +38,22 @@ new Clipboard('.copy-button');
 </form>
 </div>
 
-<div class="checkbox-header">
+<div class="checkbox-header" markdown="1">
 <h2 class="no-anchor">Data Products</h2>
-<form name="products" class="checkbox-group">
+<form name="products" class="checkbox-group" markdown="1">
 <label><input class="chk" type="checkbox" data-product="power" checked /> Matter power spectrum </label>
 <label><input id="fofchk" class="chk" type="checkbox" data-product="FoF_halos"/> Friends-of-friends halos</label>
-<ul class="normal">
-  <li><label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="halos.tar.gz"/>Halos</label></li>
-  <li><label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="halo_subsamples.tar.gz"/>Halo particles</label></li>
-  <li><label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="halo_subsample_ids.tar.gz"/>Halo particle IDs</label></li>
-  <li><label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="field_subsamples.tar.gz"/>Field particles</label></li>
-  <li><label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="field_subsample_ids.tar.gz"/>Field particle IDs</label></li>
-</ul>
+
+- <label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="halos.tar.gz"/>Halos</label>
+- <label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="halo_subsamples.tar.gz"/>Halo particles</label>
+- <label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="halo_subsample_ids.tar.gz"/>Halo particle IDs</label>
+- <label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="field_subsamples.tar.gz"/>Field particles</label>
+- <label><input name="fofchk_sub" class="subchk" type="checkbox" data-fn="field_subsample_ids.tar.gz"/>Field particle IDs</label>
+
 <label><input id="rockchk" class="chk" type="checkbox" data-product="rockstar_halos"/> Rockstar halos</label>
-<ul class="normal">
-  <li><label><input name="rockchk_sub" class="subchk" type="checkbox" data-fn="halos.tar.gz"/>Halos</label></li>
-  <li><label><input name="rockchk_sub" class="subchk" type="checkbox" data-fn="halo_subsamples.tar.gz"/>Halo particles</label></li>
-  <li><label><input name="rockchk_sub" class="subchk" type="checkbox" data-fn="halo_subsample_ids.tar.gz"/>Halo particle IDs</label></li>
-</ul>
+- <label><input name="rockchk_sub" class="subchk" type="checkbox" data-fn="halos.tar.gz"/>Halos</label>
+- <label><input name="rockchk_sub" class="subchk" type="checkbox" data-fn="halo_subsamples.tar.gz"/>Halo particles</label>
+- <label><input name="rockchk_sub" class="subchk" type="checkbox" data-fn="halo_subsample_ids.tar.gz"/>Halo particle IDs</label>
 </form>
 </div>
 

@@ -225,3 +225,13 @@ body { background: white; text-shadow: none}
 form > ul + p{
 	margin-top: -20px;
 }
+
+.twocolumn {
+    width:50%;
+    float: left;
+    margin-right: 5%;
+}
+
+#main_content {
+    overflow: hidden;
+}

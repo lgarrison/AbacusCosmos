@@ -26,3 +26,6 @@ _Metchnik & Pinto_ (in prep.)
 
 # Visualizations/Fun
 Abacus Halo Visualization Gallery: <http://lgarrison.github.io/halos/>
+
+# Icon
+Credit: “[Abacus](https://thenounproject.com/term/abacus/182802/)” icon by Zlatko Najdenovski from [the Noun Project](http://thenounproject.com/).

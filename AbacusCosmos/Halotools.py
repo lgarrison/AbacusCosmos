@@ -44,7 +44,7 @@ Quick Example
 
 import halotools
 from halotools.sim_manager import UserSuppliedHaloCatalog, UserSuppliedPtclCatalog
-from halotools.empirical_models.phase_space_models.profile_models.profile_helpers import halo_mass_to_halo_radius
+from halotools.empirical_models.phase_space_models.analytic_models.halo_boundary_functions import halo_mass_to_halo_radius
 
 import Halos
 from Reglob import reglob
@@ -221,10 +221,29 @@ class AbacusHaloCatalog(UserSuppliedHaloCatalog):
             halos['subhalo_pos'] %= halocat.header.BoxSize
         except ValueError:
             pass  # no subhalo_pos field
+
+    	if halocat.halo_type == 'rockstar':
+	        # convert rockstar halo radii to Mpc/h from kpc/h
+	        kpc_fields = ['r', 'rs', 'klypin_rs', 'rvmax', 'child_r', 'halfmass_radius']
+	        for f in kpc_fields:
+	        	halocat.halos[f] /= 1000.
         
         # prepend 'halo_' to field names
         halos.dtype.names = [('halo_' + n) if not n.startswith('halo_') else n for n in halos.dtype.names]
         halo_catalog_columns = {n:halos[n] for n in halos.dtype.names}
+        
+        # Rockstar calls the primary mass field 'halo_m',
+        # but halotools expects us to append a mass definition like "halo_mvir"
+        # TODO: read the alternative mass definitions and modify the alt_m fields
+        try:
+            mdef = halocat.halo_finder_cfg['MASS_DEFINITION']
+            mdef = mdef.lower().replace('b','m')
+            halo_catalog_columns['halo_m{}'.format(mdef)] = halo_catalog_columns['halo_m']
+            halo_catalog_columns['halo_r{}'.format(mdef)] = halo_catalog_columns['halo_r']
+            del halo_catalog_columns['halo_m']
+            del halo_catalog_columns['halo_r']
+        except KeyError:
+            pass  # not Rockstar
         
         # halotools requires that id is unique
         #assert len(np.unique(halo_catalog_columns['halo_id'])) == len(halo_catalog_columns['halo_id']), "halo_id not unique!"
@@ -276,6 +295,7 @@ class AbacusHaloCatalog(UserSuppliedHaloCatalog):
         
         halo_catalog_columns.update(metadata)  # merge into one dict so we can pass as kwarg
         super(AbacusHaloCatalog, self).__init__(**halo_catalog_columns)
+        halotools.utils.add_halo_hostid(self.halo_table)
         
         # Manually bind the halo subsamples
         if load_halo_ptcl_catalog:

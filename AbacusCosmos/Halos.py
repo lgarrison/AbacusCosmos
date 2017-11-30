@@ -114,10 +114,12 @@ def make_catalogs(sim_name, products_dir, label='', load_phases=False, load_subs
         sim_name = re.sub(r'-\d+$', '', sim_name)
         sim_name += '{0}'
         phase_regex = '(-\d+)?'
+
+    halo_type = halo_type.lower()
         
-    tag = {'FoF':r'_FoF_halos',
-           'Rockstar':r'_rockstar_halos',
-           'Rockstar_SO':r'_rockstar_halos'}
+    tag = {'fof':r'_FoF_halos',
+           'rockstar':r'_rockstar_halos',
+           'rockstar_so':r'_rockstar_halos'}
     slice_pattern = pjoin(products_dir, sim_name + '_products', sim_name + tag[halo_type] + suffix, 'z*')
     
     # Read halo catalogs
@@ -222,6 +224,7 @@ def make_catalog_from_dir(dirname, downsampled=1, load_subsamples=False, load_un
     c.z = z
     c.header = header
     c.dirname = dirname
+    c.halo_type = halo_type
     
     c.halo_finder_cfg = get_halo_finder_cfg(dirname, halo_type=halo_type)
     
@@ -527,15 +530,6 @@ def read_halos_Rockstar(dirname, particle_mass=None, **kwargs):
             particle_mass = f['halos'].attrs['ParticleMassHMsun']
         boxsize = kwargs.get('boxsize', f['halos'].attrs['BoxSize'])
         
-        # Add fields with the particle counts
-        # TODO: adding columns is where columnar table containers excel.  Provides a strong case for switching everything to Halotools.
-        #h5halos_N = np.empty(h5halos.shape, dtype=np.dtype([('N', np.int32), ('alt_N', np.int32,4), ('N_SO', np.int32), ('alt_N_SO', np.int32,4)]))
-        #h5halos_N['N'] = np.round(h5halos['m'] / particle_mass)
-        #h5halos_N['alt_N'] = np.round(h5halos['alt_m'] / particle_mass)
-        #h5halos_N['N_SO'] = np.round(h5halos['m_SO'] / particle_mass)
-        #h5halos_N['alt_N_SO'] = np.round(h5halos['alt_m_SO'] / particle_mass)
-        #h5halos = rfn.merge_arrays([h5halos, h5halos_N], flatten=True, usemask=False)
-        
         # Check that the mass is a whole number
         assert np.allclose(h5halos['N'] * particle_mass, h5halos['m'], rtol=1e-4)
         assert np.allclose(h5halos['N_SO'] * particle_mass, h5halos['m_SO'], rtol=1e-4)
@@ -544,7 +538,7 @@ def read_halos_Rockstar(dirname, particle_mass=None, **kwargs):
         
     halos = np.concatenate(all_halos)
     
-    wrap_zero_centered(halos['pos'], boxsize)
+    #wrap_zero_centered(halos['pos'], boxsize)
     
     return halos
         
@@ -610,7 +604,7 @@ def read_subsamples_Rockstar(dirname, halos, halo_regex=r'\d+\.\d+', load_pids=F
     assert njump == nfiles - 1, \
         "{} jumps in subsample indexing, but {} file splits.  Were the halos reordered?".format(njump, nfiles-1)
         
-    wrap_zero_centered(particles['pos'], boxsize)
+    #wrap_zero_centered(particles['pos'], boxsize)
         
     return particles
     

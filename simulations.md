@@ -61,7 +61,7 @@ The cosmology of a given simulation can be read from the `info/abacus.par` file.
 Below we show a corner plot representation of this 5-dimensional parameter space.  The blue square marks the fiducial cosmology.
 
 <center>
-<img src="{{ site.baseurl }}{% link cosmology_corner_plot.png %}" alt="cosmology corner plot" style="width: 50%;"/>
+<img src="{{ site.baseurl }}{% link cosmology_corner_plot.png %}" alt="cosmology corner plot" style="width: 60%;"/>
 </center>
 
 # Initial Conditions

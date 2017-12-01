@@ -2,7 +2,8 @@
 layout: default
 ---
 
-<div class="twocolumn" markdown="1">
+<div class="twocolumn">
+<div class="column" markdown="1">
 # Overview
 This website contains a number of N-body simulation data products
 from the Abacus project, including halos catalogs, particle subsamples, power spectra,
@@ -23,11 +24,12 @@ The Abacus Cosmos suite was run by [Lehman Garrison](http://lgarrison.github.io/
 Daniel Eisenstein, Marc Metchnik, and Phil Pinto.  See the [Papers]({{ site.baseurl }}{% link papers.md %}) for more information.
 </div>
 
-<div>
-<figure style="width: 45%; float: left;">
+<div class="column">
+<figure>
 <img src="{{ site.baseurl }}{% link abacus_slice.png %}" alt="abacus slice"/>
 <figcaption markdown="1">
 A slice through an Abacus simulation box at \\(z=1.0\\) rendered with the [Gotetra code](https://github.com/phil-mansfield/gotetra).  The slice is \\(125 \mathrm{~Mpc}/h\\) \\(\times\\) \\(125 \mathrm{~Mpc}/h\\) \\(\times\\) \\(12.5 \mathrm{~Mpc}/h\\).
 </figcaption>
 </figure>
+</div>
 </div>

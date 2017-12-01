@@ -226,12 +226,11 @@ form > ul + p{
 	margin-top: -20px;
 }
 
-.twocolumn {
-    width:50%;
-    float: left;
-    margin-right: 5%;
+.column {
+    flex: 0 0 47.5%;
 }
 
-#main_content {
-    overflow: hidden;
+.twocolumn {
+    display: flex;
+    justify-content: space-between;
 }

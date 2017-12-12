@@ -222,11 +222,15 @@ class AbacusHaloCatalog(UserSuppliedHaloCatalog):
         except ValueError:
             pass  # no subhalo_pos field
 
-    	if halocat.halo_type == 'rockstar':
-	        # convert rockstar halo radii to Mpc/h from kpc/h
-	        kpc_fields = ['r', 'rs', 'klypin_rs', 'rvmax', 'child_r', 'halfmass_radius']
-	        for f in kpc_fields:
-	        	halocat.halos[f] /= 1000.
+        if halocat.halo_type == 'rockstar':
+            # convert rockstar halo radii to Mpc/h from kpc/h
+            kpc_fields = ['r', 'rs', 'klypin_rs', 'rvmax', 'child_r', 'halfmass_radius']
+            for f in kpc_fields:
+                try:
+                    halocat.halos[f] /= 1000.
+                except ValueError:
+                    # halfmass_radius doesn't exist for the earlier catalogs because they came from an earlier version of Rockstar
+                    pass
         
         # prepend 'halo_' to field names
         halos.dtype.names = [('halo_' + n) if not n.startswith('halo_') else n for n in halos.dtype.names]

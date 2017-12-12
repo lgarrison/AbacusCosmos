@@ -4,10 +4,10 @@ layout: default
 
 # Overview
 The file formats for all the data products are documented below.
-Python code is also provided to load the friends-of-friends and Rockstar halos,
+[Python code]({{ site.baseurl }}{% link code.md %}) is also provided to load the friends-of-friends and Rockstar halos,
 but using it is completely optional.  If nothing else, it provides a concrete
-example of how to read the files, in case there is any ambiguity in the documentation
-below.
+example of how to read the files, in case you have any questions after reading the
+documentation below.
 
 Jump to:
 - [Friends-of-friends Halos](#friends-of-friends-halos)
@@ -204,7 +204,7 @@ construct crude merger trees, for instance.
 The FoF catalogs also include a 10% subsample of particles that fall outside of halos, called "field" particles.  Thus, the union of the halo particles
 and the field particles is a uniform 10% subsample of the whole matter density field.
 
-We do not include a field subsample from Rockstar, as it would increase the data volume significantly and require internal Rockstar changes.  A field subsample can be found in the FoF catalogs, however.
+We do not include a field subsample from Rockstar, as it would increase the data volume significantly and require internal Rockstar changes.
 
 # Power spectra
 Power spectra from each redshift slice are located in the `SimName_power` subdirectory of each simulation.  An example directory structure follows:
@@ -253,7 +253,7 @@ You will usually want to parse the `header` file for analysis tasks.  If you are
 
 # Important parameters
 We collect the most important simulation parameters here for convenience.  These are values can all be found in `info/abacus.par` or `zZ.ZZZ/header`.
-If something isn't covered here, the [Abacus user guide](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/abacus_user_guide.pdf) contains detailed descriptions of all parameters.
+If something isn't covered here, the [Abacus user guide](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/abacus_user_guide_public.pdf) contains detailed descriptions of all parameters.
 
 | **Name** | **Type** | **Units** | **Description** |
 |:---- |:---- |:----- |:----------- |

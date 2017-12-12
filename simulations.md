@@ -11,20 +11,27 @@ phase of the same cosmology; that is, an independent realization of the power sp
 
 # Simulation Sets
 
-| **Simulation Set Name** | **# of sims** | **Box Size [\\(\mathrm{Mpc}/h\\)]** | **\\(N_\mathrm{part}\\)** | **Particle Mass [\\(M_\odot/h\\)]** | **Cosmologies** | **Initial Phases** | **Output Redshifts** | **Notes** | **Browse** |
+| **Simulation Set Name** | **# of sims** | **Box Size [\\(\mathrm{Mpc}/h\\)]** | **\\(N_\mathrm{part}\\)** | **Particle Mass [\\(M_\odot/h\\)]** | **Cosmologies** | **Initial Phases** | **Output Redshifts** | **Notes** | **Softening** |
 |:-------------|--------------:|------------------------------------:|--------------------------:|:------------------------------------|:----------------|:-----------|:--------------|:----------|:-----------|
-| **AbacusCosmos_1100box** | 40 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Latin Hypercube centered on Planck 2015 | Matched | 1.5, 1.0, 0.7, 0.5, 0.3 | | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_1100box_products/) |
-| **AbacusCosmos_720box** | 40 | 720 | \\(1440^3\\) | \\(\sim 1\times 10^{10}\\) | Latin Hypercube centered on Planck 2015 | Matched | 1.5, 1.0, 0.7, 0.5, 0.3, 0.1 | Not zoom-in boxes of the above | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_720box_products/) |
-| <span style="white-space: nowrap;"> **emulator_1100box_planck_00-{0..15}** </span> | 16 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Fiducial | Independent | 0.7, 0.57, 0.5, 0.3 | Volume-building boxes | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_1100box_planck_products/) |
-| **emulator_1100box_planck_{00..04}** | 5 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Fiducial + perturbations | Matched | 0.7, 0.57, 0.5, 0.3 | Derivative-measuring boxes | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_1100box_planck_products/) |
-| **emulator_720box_planck_00-{0..15}** | 16 | 720 | \\(1440^3\\) | \\(\sim 1\times 10^{10}\\) | Fiducial | Independent | 0.7, 0.57, 0.5, 0.3, 0.1 | Volume-building boxes | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_720box_planck_products/) |
-| **emulator_720box_planck_{00..04}** | 5 | 720 | \\(1440^3\\) | \\(\sim 1\times 10^{10}\\) | Fiducial + perturbations | Matched | 0.7, 0.57, 0.5, 0.3, 0.1 | Derivative-measuring boxes | [Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_720box_planck_products/) |
+| **AbacusCosmos_1100box** ([Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_1100box_products/)) | 41 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Latin Hypercube centered on Planck 2015 | Matched | 1.5, 1.0, 0.7, 0.5, 0.3 | | Spline, \\(63\;\mathrm{kpc}/h\\) |
+| **AbacusCosmos_720box** ([Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_720box_products/)) | 41 | 720 | \\(1440^3\\) | \\(\sim 1\times 10^{10}\\) | Latin Hypercube centered on Planck 2015 | Matched | 1.5, 1.0, 0.7, 0.5, 0.3, 0.1 | Not zoom-in boxes of the above | Spline, \\(41\;\mathrm{kpc}/h\\) |
+| <span style="white-space: nowrap;"> **emulator_1100box_planck_00-{0..15}** </span> ([Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_1100box_planck_products/)) | 16 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Fiducial | Independent | 0.7, 0.57, 0.5, 0.3 | Volume-building boxes | Plummer, \\(63\;\mathrm{kpc}/h\\) |
+| **emulator_1100box_planck_{00..04}** ([Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_1100box_planck_products/)) | 5 | 1100 | \\(1440^3\\) | \\(\sim 4\times 10^{10}\\) | Fiducial + perturbations | Matched | 0.7, 0.57, 0.5, 0.3 | Derivative-measuring boxes | Plummer, \\(63\;\mathrm{kpc}/h\\) |
+| **emulator_720box_planck_00-{0..15}** ([Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_720box_planck_products/)) | 16 | 720 | \\(1440^3\\) | \\(\sim 1\times 10^{10}\\) | Fiducial | Independent | 0.7, 0.57, 0.5, 0.3, 0.1 | Volume-building boxes | Plummer, \\(41\;\mathrm{kpc}/h\\) |
+| **emulator_720box_planck_{00..04}** ([Browse](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/emulator_720box_planck_products/))| 5 | 720 | \\(1440^3\\) | \\(\sim 1\times 10^{10}\\) | Fiducial + perturbations | Matched | 0.7, 0.57, 0.5, 0.3, 0.1 | Derivative-measuring boxes | Plummer, \\(41\;\mathrm{kpc}/h\\) |
+
+# Design
+The 40 `AbacusCosmos` simulations are designed to allow estimation of derivatives of cosmological measurables with respect to cosmology.  They can either be used as an ensemble to construct an emulator/interpolator, or each individual box can be differenced with the central `AbacusCosmos_planck` box to provide an estimate of the derivative for that particular change in cosmology.
+
+The boxes do not provide much volume of any individual cosmology ($$1.7\;(\mathrm{Gpc}/h)^3$$ if both resolutions are combined), but the 16 phase-varied `emulator_planck` boxes provide additional volume and a path toward suppressing cosmic variance and estimating covariance.  The 5 `emulator_planck` single-parameter excursion boxes provide a more direct route to measuring derivatives but only for two parameters.
+
+The motivation for two mass resolutions was first to provide a convergence test for large-scale structure properties, at least in the intermediate regime well-sampled by both resolutions.  Second, the larger boxes provide the volume that is needed for BAO-type studies, while the smaller boxes provide the halo resolution that is needed by weak lensing studies.
 
 
 # Cosmologies
 ## Fiducial Cosmology
 The fiducial cosmology is taken from the [Planck 2015 cosmological parameters paper](https://arxiv.org/abs/1502.01589).
-This is the cosmology of the `emulator_planck_00` sims.  The `AbacusCosmos` sims use 40 cosmologies scattered around this cosmology.
+This is the cosmology of the `emulator_planck_00` sims and the `AbacusCosmos_planck` sims.  The `AbacusCosmos` sims use 40 cosmologies scattered around this cosmology.
 
 The cosmological parameters are listed here for convenience, but in analysis applications the cosmological parameters should always be read from
 `abacus.par` or `camb_params.ini`.
@@ -57,12 +64,39 @@ The perturbations are listed here.  Note that since the cosmologies are chosen i
 
 ## AbacusCosmos Cosmologies
 The `AbacusCosmos_1100box` and `AbacusCosmos_720box` sims use a set of 40 cosmologies chosen with a Latin hypercube algorithm centered on the Planck 2015 cosmology.
+We vary $$H_0$$, $$w_0$$, $$\Omega_\mathrm{CDM}h^2$$, $$\Omega_bh^2$$, $$\sigma_8$$, and $$n_s$$.
 The cosmology of a given simulation can be read from the `info/abacus.par` file.
-Below we show a corner plot representation of this 5-dimensional parameter space.  The blue square marks the fiducial cosmology.
+Below we show a corner plot representation of this 6-dimensional parameter space, where we have combined $$\Omega_\mathrm{CDM}$$ and $$\Omega_b$$ into $$\Omega_M$$.  The blue square marks the `AbacusCosmos_planck` simulation, which is a realization of the fiducial cosmology that is phase-matched to the rest of the `AbacusCosmos` sims.
 
 <center>
 <img src="{{ site.baseurl }}{% link cosmology_corner_plot.png %}" alt="cosmology corner plot" style="width: 60%;"/>
 </center>
+
+# Softening
+The Abacus Cosmos suite employs two force softening techniques: Plummer and spline.  The `AbacusCosmos` sims use spline, while the `emulator_planck` sims use Plummer.  We generally consider spline to be more physically accurate than Plummer on small scales because the long tail of the Plummer force law suppresses power relative to spline, even for the same Plummer-equivalent softening length.  However, our fast spline implementation was only developed partway through the simulation effort and was thus only applied to the remaining sims.  In general, our softening lengths were chosen to support halos, not subhalos.
+
+Softening lengths (spline or Plummer) are always quoted in Plummer-equivalent units, meaning we match the minimum dynamical time for particle orbits.
+
+## Plummer softening
+In Plummer softening, the \\(\mathbf{F}(\mathbf{r}) = \mathbf{r}/r^3\\) force law is modified as 
+
+$$\mathbf{F}(\mathbf{r}) = \frac{\mathbf{r}}{(r^2 + \epsilon_p^2)^{3/2}}$$,
+
+where \\(\epsilon_p\\) is the softening length.  Note that this form is not compact, meaning it never
+explicitly switches to the $$r^{-2}$$ form at any radius.
+
+## Spline softening
+In spline softening, the force law is a piecewise function that explicitly switches to $$r^{-2}$$ at a certain radius.
+Traditional spline implementations have three or more piecewise segments, but this can be slow in practice.  We only
+include two piecewise segments and require continuity and smoothness at the transition up to the second derivative.  Because we split
+only once, we call our form "single spline".  The law is derived from a Taylor expansion in $$r$$ of Plummer softening and is
+as follows:
+
+$$\mathbf{F}(\mathbf{r}) =
+\begin{cases}
+\left(10 - 15(r/\epsilon_s) + 6(r/\epsilon_s)^2\right)\mathbf{r}/\epsilon_s^3, & r < \epsilon_s; \\
+\mathbf{r}/r^3, & r >= \epsilon_s.
+\end{cases}$$
 
 # Initial Conditions
 The initial conditions were generated by the public [zeldovich-PLT](https://github.com/lgarrison/zeldovich-PLT) code of [Garrison+2016](https://arxiv.org/abs/1605.02333).  We do not provide initial conditions files with the catalogs, but we do provide the input parameter file (`info/abacus.par`) for the IC code and the input power spectrum from [CAMB](http://camb.info/).  The initial conditions can thus be generated by re-running the IC code with those inputs; see below.

@@ -80,6 +80,8 @@ class InputFile:
 
     # Allows access as "params[key]"
     def __getitem__(self, key):
+        if key not in vars(self):
+            raise KeyError("InputFile has no field {}".format(repr(key)))
         return getattr(self, key)
     def __setitem__(self, key, value):
         return setattr(self, key, value)

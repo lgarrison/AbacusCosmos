@@ -18,7 +18,9 @@ Please cite this paper when using these simulations:
 </div>
 
 ## Decorated HOD paper
+<div markdown="1" class="paper">
 _Yuan, Eisenstein, & Garrison_, to be submitted Jan 2018
+</div>
 
 ## Abacus code papers
 <div markdown="1" class="paper">

@@ -7,7 +7,7 @@ layout: default
 Please cite this paper when using these simulations:
 
 <div markdown="1" class="paper">
-**Abacus Cosmos**, _Garrison, et al._ (2017): <https://arxiv.org/>
+**Abacus Cosmos**, _Garrison, et al._ (2017): <https://arxiv.org/abs/1712.05768>
 </div>
 
 ## Initial conditions generator
@@ -16,6 +16,9 @@ Please cite this paper when using these simulations:
 
 **zeldovich-PLT**: <https://github.com/lgarrison/zeldovich-PLT>
 </div>
+
+## Decorated HOD paper
+_Yuan, Eisenstein, & Garrison_, to be submitted Jan 2018
 
 ## Abacus code papers
 <div markdown="1" class="paper">

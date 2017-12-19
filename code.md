@@ -7,10 +7,11 @@ We provide example Python code to load the FoF and Rockstar halo catalogs and pa
 The main file is [Halos.py](https://github.com/lgarrison/AbacusCosmos/blob/master/AbacusCosmos/Halos.py);
 we also provide [Halotools.py](https://github.com/lgarrison/AbacusCosmos/blob/master/AbacusCosmos/Halotools.py),
 which is a thin wrapper around `Halos.py`
-that puts the catalogs in [halotools](http://halotools.readthedocs.io/) format.
+that puts the catalogs in [halotools](http://halotools.readthedocs.io/) format, where HODs can easily be applied.
+Yuan, Eisenstein, & Garrison (to be submitted Jan 2018) has also developed a decorated HOD package called GRAND-HOD that incorporates multiple HOD generalizations, such as assembly bias and velocity bias.
 
 All the code is available on the [AbacusCosmos GitHub](https://github.com/lgarrison/AbacusCosmos).
-Please file an issue there if you find a problem with the code.
+Please file an issue there if you find a problem with the code.  The [GRAND-HOD](https://github.com/SandyYuan/GRAND-HOD) repository contains details on its usage and code examples.
 
 Using these interfaces is not necessary; all of the data formats are documented in
 [Data Specifications]({{ site.baseurl }}{% link data_specifications.md %}).  But the example

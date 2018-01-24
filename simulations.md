@@ -114,5 +114,8 @@ To re-generate the initial conditions for a given sim, make a copy of the `abacu
 - `ZD_PLT_filename`: The PLT eigenmodes file.  This is included with the zeldovich-PLT code (probably `eigmodes128`).
 - `ZD_Pk_filename`: The input power spectrum file (i.e. the CAMB output file).  This is included with each sim as `info/camb_matterpower.dat`.
 
+### Note about *-0 simulations
+Due to an oversight in an earlier version of zeldovich-PLT, `ZD_Seed = 0` used a time-based seed whose value was not logged.  Thus, it is impossible to reconstruct intial conditions for those sims.  This should only affect the `emulator*00-0` boxes; none of the more recent simulations use `ZD_Seed = 0`.
+
 ## Power Spectra
 We use CAMB to generate a linear \\(z=0\\) power spectrum for each cosmology in our grid.  We then scale the power spectrum back to \\(z_\mathrm{init}=49\\) by scaling \\(\sigma_8\\) by the ratio of the growth factors \\(D(z=49)/D(z=0)\\).  This \\(\sigma_8\\) is passed to zeldovich-PLT, which handles the re-normalization of the power spectrum.  The computation of the growth factors is done by Abacus's cosmology module, so it is consistent by construction with the simulation's cosmological evolution.  We only use massless neutrinos and include no cosmological neutrino density.  The exact CAMB inputs and outputs are available with each simulation (`info/camb_params.ini` and related `info/camb_*` files; see [Info Directory]({{ site.baseurl }}{% link data_specifications.md %}#info-directory)).

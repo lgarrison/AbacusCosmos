@@ -8,10 +8,9 @@ The main file is [Halos.py](https://github.com/lgarrison/AbacusCosmos/blob/maste
 we also provide [Halotools.py](https://github.com/lgarrison/AbacusCosmos/blob/master/AbacusCosmos/Halotools.py),
 which is a thin wrapper around `Halos.py`
 that puts the catalogs in [halotools](http://halotools.readthedocs.io/) format, where HODs can easily be applied.
-Yuan, Eisenstein, & Garrison (to be submitted Jan 2018) has also developed a decorated HOD package called GRAND-HOD that incorporates multiple HOD generalizations, such as assembly bias and velocity bias.
 
 All the code is available on the [AbacusCosmos GitHub](https://github.com/lgarrison/AbacusCosmos).
-Please file an issue there if you find a problem with the code.  The [GRAND-HOD](https://github.com/SandyYuan/GRAND-HOD) repository contains details on its usage and code examples.
+Please file an issue there if you find a problem with the code.
 
 Using these interfaces is not necessary; all of the data formats are documented in
 [Data Specifications]({{ site.baseurl }}{% link data_specifications.md %}).  But the example
@@ -24,6 +23,8 @@ placing a command like the following in your `~/.bashrc` file:
 ```bash
 export PYTHONPATH="/path/to/AbacusCosmos/:$PYTHONPATH"
 ```
+
+[Yuan, Eisenstein, & Garrison](https://arxiv.org/abs/1802.10115) has also developed a decorated HOD package called GRAND-HOD that incorporates multiple HOD generalizations, such as assembly bias and velocity bias.  The [GRAND-HOD](https://github.com/SandyYuan/GRAND-HOD) repository contains details on its usage and code examples.
 
 # Examples
 The following examples are adapted from [this Jupyter notebook](https://github.com/lgarrison/AbacusCosmos/blob/master/AbacusCosmos_Python_Interface_Examples.ipynb).

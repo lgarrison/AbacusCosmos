@@ -33,7 +33,7 @@ new Clipboard('.copy-button');
 <!-- note: maybe could generate this from yml? -->
 <label><input class="chk" type="checkbox" data-path="AbacusCosmos_1100box_products" checked /> AbacusCosmos_1100box </label>
 <label><input class="chk" type="checkbox" data-path="AbacusCosmos_720box_products"/> AbacusCosmos_720box </label>
-<label><input class="chk" type="checkbox" data-path="AbacusCosmos_1100box_planck_products" checked /> AbacusCosmos_1100box_planck </label>
+<label><input class="chk" type="checkbox" data-path="AbacusCosmos_1100box_planck_products" /> AbacusCosmos_1100box_planck </label>
 <label><input class="chk" type="checkbox" data-path="AbacusCosmos_720box_planck_products"/> AbacusCosmos_720box_planck </label>
 <label><input class="chk" type="checkbox" data-path="emulator_1100box_planck_products"/> emulator_1100box_planck </label>
 <label><input class="chk" type="checkbox" data-path="emulator_720box_planck_products"/> emulator_720box_planck </label>

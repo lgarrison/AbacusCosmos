@@ -135,7 +135,7 @@ def make_catalogs(sim_name, cosmologies, redshifts, products_dir, phases=None, h
                     cat_dir = cat_dir_fmt.format(cosm=cstr(c), phase='{phase:s}', z=zstr(z))
                     phases = reglob(cat_dir, {'phase':r'(-\d+)?'}, return_capture=1)
                     phases = set((int(p[1:]) if p is not None else p) for p in phases)  # remove leading dash
-                    assert phases, "No phases found for redshift {z}, cosmology {cosm}. Search pattern was '{dir}'".format(z=zstr(s), cosm=cstr(c), dir=cat_dir)
+                    assert phases, "No phases found for redshift {z}, cosmology {cosm}. Search pattern was '{dir}'".format(z=zstr(z), cosm=cstr(c), dir=cat_dir)
                 pcats = []
                 for p in phases:
                     cat_dir = cat_dir_fmt.format(cosm=cstr(c), phase=pstr(p), z=zstr(z))
@@ -307,6 +307,8 @@ class AbacusHaloCatalog(UserSuppliedHaloCatalog):
             subsamples['pos'] %= halocat.header.BoxSize  # wrap to [0, Lbox)
             ptcl_catalog_columns = { 'x':subsamples['pos'][:,0],  'y':subsamples['pos'][:,1],  'z':subsamples['pos'][:,2],
                                     'vx':subsamples['vel'][:,0], 'vy':subsamples['vel'][:,1], 'vz':subsamples['vel'][:,2]}
+            if 'id' in subsamples.dtype.names:
+                ptcl_catalog_columns.update({'pid':subsamples['id']})
             if 'pid' in subsamples.dtype.names:
                 ptcl_catalog_columns.update({'pid':subsamples['pid']})
             ptcl_catalog_columns.update(metadata)  # merge into one dict so we can pass as kwarg

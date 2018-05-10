@@ -410,7 +410,7 @@ def read_subsamples_FoF(dirname, halos, halo_regex=r'\d+', load_pids='auto', box
     return particles
 
 
-def reindex_halo_subsamples(halos, subsamp_len_key='subsamp_len'):
+def reindex_halo_subsamples(halos, subsamp_start_key='subsamp_start', subsamp_len_key='subsamp_len'):
     """
     If we concatenate halos and particles into big files/arrays, the "subsample start" indices
     in the halos table no longer correspond to the concatenated particle array.  But we can
@@ -432,11 +432,11 @@ def reindex_halo_subsamples(halos, subsamp_len_key='subsamp_len'):
     
     # The number of "discontinuities" in particle indexing should equal the number of files
     # This helps us make sure the halos were not reordered
-    njump = (halos['subsamp_start'][:-1] + halos[subsamp_len_key][:-1] != halos['subsamp_start'][1:]).sum()
+    njump = (halos[subsamp_start_key][:-1] + halos[subsamp_len_key][:-1] != halos[subsamp_start_key][1:]).sum()
     
     # Now reindex the halo records
-    halos['subsamp_start'][0] = 0
-    halos['subsamp_start'][1:] = halos[subsamp_len_key].cumsum()[:-1]
+    assert halos[subsamp_start_key][0] == 0
+    halos[subsamp_start_key][1:] = halos[subsamp_len_key].cumsum()[:-1]
     
     return njump
     

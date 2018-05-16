@@ -52,7 +52,7 @@ import os
 import os.path as path
 from os.path import join as pjoin
 import re
-from itertools import izip, cycle
+from itertools import cycle
 from collections import defaultdict, OrderedDict
 import h5py
 import numpy.lib.recfunctions as rfn
@@ -62,8 +62,8 @@ import astropy.units as u
 import matplotlib.pyplot as plt
 import cycler
 
-from InputFile import InputFile
-from Reglob import reglob
+from .InputFile import InputFile
+from .Reglob import reglob
 
 
 def make_catalogs(sim_name, products_dir, label='', load_phases=False, load_subsamples=False, redshifts='all', suffix='', downsampled=1, halo_type='FoF', color=None, linestyle='-'):
@@ -142,7 +142,7 @@ def make_catalogs(sim_name, products_dir, label='', load_phases=False, load_subs
     
     # Merge multiple phases into a single catalog
     # Halos is now a list of halo arrays, one per phase
-    for z,cats in cats_by_z.iteritems():
+    for z,cats in cats_by_z.items():
         cats[0].halos = [c.halos for c in sorted(cats, key=lambda x:x.header.ZD_Seed)]
         if load_subsamples:
             cats[0].subsamples = [c.subsamples for c in sorted(cats, key=lambda x:x.header.ZD_Seed)]
@@ -151,8 +151,8 @@ def make_catalogs(sim_name, products_dir, label='', load_phases=False, load_subs
             
     # Plot formatting
     if not color:
-        color = color_cycle.next()
-    for cat in cats_by_z.itervalues():
+        color = next(color_cycle)
+    for cat in cats_by_z.values():
         cat.label = label if label else cat.header.SimName
         cat.linestyle = linestyle
         cat.color = color

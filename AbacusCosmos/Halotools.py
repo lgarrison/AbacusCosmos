@@ -46,8 +46,8 @@ import halotools
 from halotools.sim_manager import UserSuppliedHaloCatalog, UserSuppliedPtclCatalog
 from halotools.empirical_models.phase_space_models.analytic_models.halo_boundary_functions import halo_mass_to_halo_radius
 
-import Halos
-from Reglob import reglob
+from . import Halos
+from .Reglob import reglob
 import os
 import numpy as np
 
@@ -157,7 +157,7 @@ def make_catalogs(sim_name, cosmologies, redshifts, products_dir, phases=None, h
     for_all_catalogs(validate_dir)
     
     def printcats(cat_dir):
-        print cat_dir
+        print(cat_dir)
     #for_all_catalogs(printcats)
     
     # now do the real catalog construction

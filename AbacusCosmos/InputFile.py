@@ -26,7 +26,7 @@ EXERCISE EXTREME CAUTION: THIS CLASS ALLOWS ARBITRARY EXECUTION OF TEXT FILES AS
 
 import sys
 import os.path as path
-from cStringIO import StringIO
+from io import StringIO
 
 class InputFile:
     def __init__(self, fn=None, str_source=None):
@@ -41,7 +41,7 @@ class InputFile:
             raise RuntimeError('Must specify one of `fn` and `str_source`!')
             
         if fn:
-            param = open(fn, "rb")
+            param = open(fn, "r")
         elif str_source:
             param = StringIO(str_source)
         else:
@@ -58,19 +58,24 @@ class InputFile:
             equals = line.find('=')
             if equals == -1:
                 continue
+            key = line[:equals].strip()
+            valstr = line[equals+1:].strip()
             try:
-                exec 'self.'+line  # valid python as-is?
+            	# valid python as-is?
+            	value = eval(valstr)
             except (SyntaxError,NameError):
                 try:
-                    lhs = line[equals+1:]
-                    items = lhs.split()
+                	# valid as a tuple, if we replace spaces with commas?
+                    items = valstr.split()
                     vec  = ','.join(items)
-                    exec 'self.'+line[0:equals+1] + "("+vec+")"  # valid as a vector, if we replace spaces with commas?
+                    value = eval('({})'.format(vec))
                 except:
                     try:
-                        exec 'self.'+line[0:equals+1] + "'"+line[equals+1:] +"'"  # valid as a string if we wrap the whole RHS in quotes?
+                    	# valid as a string if we wrap the whole RHS in quotes?
+                    	value = eval('"{}"'.format(valstr))
                     except:
-                        raise RuntimeError('Error: Could not parse line: "{:s}"'.format(line))
+                        raise ValueError('Error: Could not parse line: "{:s}"'.format(line))
+            setattr(self, key, value)
         
         # A common pathology is that BoxSize is interpreted as an int by ParseHeader
         # We should endeavor to always write "50." instead of "50" in the .par files
@@ -85,6 +90,12 @@ class InputFile:
         return getattr(self, key)
     def __setitem__(self, key, value):
         return setattr(self, key, value)
+        
+    def get(self, key, default=None):
+        try:
+            return self[key]
+        except KeyError:
+            return default
     
     # Allows testing "key in params"
     def __contains__(self, key):

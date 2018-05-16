@@ -7,19 +7,21 @@ layout: default
 Please cite this paper when using these simulations:
 
 <div markdown="1" class="paper">
-**Abacus Cosmos**, _Garrison, et al._ (2017): <https://arxiv.org/abs/1712.05768>
+**Abacus Cosmos: A Suite of Cosmological N-body Simulations**, _Garrison, et al._ (2017): <https://arxiv.org/abs/1712.05768>
 </div>
 
 ## Initial conditions generator
 <div markdown="1" class="paper">
-**Improving Initial Conditions for Cosmological N-Body Simulations**, _Garrison, et al._ (2016): <https://arxiv.org/abs/1605.02333>
+Paper: **Improving Initial Conditions for Cosmological N-Body Simulations**, _Garrison, et al._ (2016): <https://arxiv.org/abs/1605.02333>
 
-**zeldovich-PLT**: <https://github.com/lgarrison/zeldovich-PLT>
+Code: **zeldovich-PLT**: <https://github.com/lgarrison/zeldovich-PLT>
 </div>
 
-## Decorated HOD paper
+## Decorated HOD
 <div markdown="1" class="paper">
-_Yuan, Eisenstein, & Garrison_, to be submitted Jan 2018
+Paper: **Exploring the squeezed three-point galaxy correlation function with generalized halo occupation distribution models**, _Yuan, Eisenstein, & Garrison_ (2018): <https://arxiv.org/abs/1802.10115>
+
+Code: **GRAND-HOD**: <https://github.com/SandyYuan/GRAND-HOD>
 </div>
 
 ## Abacus code papers

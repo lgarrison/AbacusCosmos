@@ -29,6 +29,7 @@ The boxes do not provide much volume of any individual cosmology ($$1.7\;(\mathr
 
 The motivation for two mass resolutions was first to provide a convergence test for large-scale structure properties, at least in the intermediate regime well-sampled by both resolutions.  Second, the larger boxes provide the volume that is needed for BAO-type studies, while the smaller boxes provide the halo resolution that is needed by weak lensing studies.
 
+In general, the lowest redshift slice (usually \\(z=0.1\\)) is only available for the smaller (720 Mpc/h) boxes, since the amount of observable cosmological volume is relatively small by that redshift.  Thus, the smaller boxes are usually sufficient and also offer better resolution.
 
 # Cosmologies
 ## Fiducial Cosmology

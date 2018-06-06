@@ -31,10 +31,10 @@ The friends of friends (FoF) halos are located in the `SimName_FoF_halos` subdir
         - `halos.tar.gz`: The main halo catalogs
         - `fof.cfg`: FoF configuration file
         - `header`: the Abacus parameter file describing this redshift slice
-        - `particles.tar.gz`: a 10% subsample of particles inside halos
-        - `particle_ids.tar.gz`: the corresponding particle IDs
-        - `field_particles.tar.gz`: a 10% subsample of particle outside of halos
-        - `field_ids.tar.gz`: the corresponding particle IDs
+        - `halo_subsamples.tar.gz`: a 10% subsample of particles inside halos
+        - `halo_subsample_ids.tar.gz`: the corresponding particle IDs
+        - `field_subsamples.tar.gz`: a 10% subsample of particle outside of halos
+        - `field_subsample_ids.tar.gz`: the corresponding particle IDs
 </div>
         
 ## filename: <code class="fn">halos_N</code>
@@ -143,7 +143,7 @@ The [Rockstar](https://bitbucket.org/gfcstanford/rockstar) halos are located in 
         - `halos.tar.gz`: the main halo catalogs
         - `rockstar.cfg`: the Rockstar configuration file
         - `header`: the Abacus parameter file describing this redshift slice
-        - `particles.tar.gz`: a 10% subsample of particles inside halos
+        - `halo_subsamples.tar.gz`: a 10% subsample of particles inside halos
 </div>
 
 ## filename: <code class="fn">halos_M.N.h5</code>

@@ -167,6 +167,8 @@ The `header` file is also stored as an HDF5 dataset attribute, but this is purel
 The Rockstar configuration file.  See the [Rockstar documentation](https://bitbucket.org/gfcstanford/rockstar) for definitions.
 
 ## Units
+The mass definitions corresponding to the `m` and `alt_m` fields can be read from the `MASS_DEFINITION` fields in `rockstar.cfg`.  In almost all cases, we have left the mass definitions at the default, so `m` corresponds to the virial mass.
+
 For convenience, we copy the Rockstar notes about units from the ASCII header here.  You may need to consult the [Rockstar documentation or source code](https://bitbucket.org/gfcstanford/rockstar)
 for the exact definition of a quantity, however.
 - Masses in Msun / h

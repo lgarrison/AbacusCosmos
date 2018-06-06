@@ -208,6 +208,8 @@ and the field particles is a uniform 10% subsample of the whole matter density f
 
 We do not include a field subsample from Rockstar, as it would increase the data volume significantly and require internal Rockstar changes.
 
+The Rockstar particle subsamples are taken from the FoF group belonging to each halo (corresponding to the `num_p` field, not `N`, which takes into account substructure and mass unbinding, among other things).  Thus, the subsamples will be 10% of `num_p`, not `N` and will not include substructure.  To fetch substructure particles, use the `parent_id` field to find the subhalos for a given halo.
+
 # Power spectra
 Power spectra from each redshift slice are located in the `SimName_power` subdirectory of each simulation.  An example directory structure follows:
 <div markdown="1" class="tree">

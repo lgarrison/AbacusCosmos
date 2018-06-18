@@ -68,7 +68,8 @@ The perturbations are listed here.  Note that since the cosmologies are chosen i
 ## AbacusCosmos Cosmologies
 The `AbacusCosmos_1100box` and `AbacusCosmos_720box` sims use a set of 40 cosmologies chosen with a Latin hypercube algorithm centered on the Planck 2015 cosmology.
 We vary $$H_0$$, $$w_0$$, $$\Omega_\mathrm{CDM}h^2$$, $$\Omega_bh^2$$, $$\sigma_8$$, and $$n_s$$.
-The cosmology of a given simulation can be read from the `info/abacus.par` file.
+The cosmology of a given simulation can be read from the `info/abacus.par` file.  The full list of cosmologies is available [here](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/AbacusCosmos_cosmologies.dat).
+
 Below we show a corner plot representation of this 6-dimensional parameter space, where we have combined $$\Omega_\mathrm{CDM}$$ and $$\Omega_b$$ into $$\Omega_M$$.  The blue square marks the `AbacusCosmos_planck` simulation, which is a realization of the fiducial cosmology that is phase-matched to the rest of the `AbacusCosmos` sims.
 
 <center>

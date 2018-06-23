@@ -7,7 +7,7 @@ All simulation data products can be browsed at <http://nbody.rc.fas.harvard.edu/
 You'll probably want to use a utility like `wget` or `curl` to recursively download the catalogs.
 The following tool will help you build a `wget` command to download the desired files.
 
-We would like to thank Harvard Research Computing for their assistance in hosting the catalogs.
+We would like to thank Harvard Research Computing for their assistance in hosting the catalogs.  If the website above is inaccessible, please check the RC status page for outage information: <http://fasrc.us>.
 
 # Command-line Builder
 <script src="{{ site.baseurl }}/assets/js/clipboard.min.js"></script>

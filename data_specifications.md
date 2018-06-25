@@ -133,7 +133,7 @@ All distances are comoving in the domain [-`BoxSize`/2, `BoxSize`/2), and all ve
 
 
 # Rockstar halos
-The [Rockstar](https://bitbucket.org/gfcstanford/rockstar) halos are located in the `SimName_Rockstar_halos` subdirectory of each simulation.  An example directory structure follows:
+The [Rockstar](https://bitbucket.org/gfcstanford/rockstar) halos are located in the `SimName_Rockstar_halos` subdirectory of each simulation.  We used Rockstar git version bca3ad3, with modifications described below to output particle subsamples and both SO and non-SO masses.  An example directory structure follows:
 <div markdown="1" class="tree">
 - `AbacusCosmos_1100box_products`
   - `AbacusCosmos_1100box_00_products`

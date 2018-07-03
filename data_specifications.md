@@ -272,7 +272,7 @@ If something isn't covered here, the [Abacus user guide](http://nbody.rc.fas.har
 | `ns` | float | | Scalar spectral index.  Only used by CAMB, not Abacus. |
 | `ombh2` | float | | Physical baryon density parameter. Only used by CAMB, not Abacus. |
 | `omch2` | float | | Physical CDM density parameter. Only used by CAMB, not Abacus. |
-| `simga_8` | float | | Amplitude of density fluctuations at 8 Mpc/h.  Technically not read by CAMB or Abacus.  This is converted to `ZD_Pk_sigma` before the zeldovich-PLT IC code is invoked. |
+| `sigma_8` | float | | Amplitude of density fluctuations at 8 Mpc/h.  Technically not read by CAMB or Abacus.  This is converted to `ZD_Pk_sigma` before the zeldovich-PLT IC code is invoked. |
 | `w0` | float | | Dark energy equation of state parameter at z=0 |
 | `wa` | float | | Dark energy equation of state evolution parameter: \\(w(a) = w_0 + (1-a)w_a\\) |
 | `ppd` | float | | "Particles per dimension"; NP = ppd^3 |

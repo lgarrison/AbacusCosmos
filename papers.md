@@ -26,9 +26,9 @@ Code: **GRAND-HOD**: <https://github.com/SandyYuan/GRAND-HOD>
 
 ## Abacus code papers
 <div markdown="1" class="paper">
-_Ferrer, et al._ (in prep.)
+Main code paper: _Garrison, et al._ (in prep.)
 
-_Metchnik & Pinto_ (in prep.)
+Far-field method paper: in prep.
 </div>
 
 # Visualizations/Fun

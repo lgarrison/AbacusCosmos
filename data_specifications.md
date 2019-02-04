@@ -223,11 +223,11 @@ Power spectra from each redshift slice are located in the `SimName_power` subdir
 </div>
         
 The power spectrum file `power_nfft2048.csv` is a comma separated values file with three columns:
-wavenumber \\(k\\) [h/Mpc], power \\(P(k)\\) [(Mpc/h)^3], and number of modes \\(N_\mathrm{modes}\\).  The suffix `_nfft2048`
+wavenumber \\(k\\) [h/Mpc], power \\(P(k)\\) [(Mpc/h)^3], and number of modes \\(N_\mathrm{modes}\\).  The wavenumber and power are the mean of all the modes that fall into that wavenumber bin.  The suffix `_nfft2048`
 in the filename indicates that the power spectrum computation used a \\(2048^3\\) mesh.
 
 We compute the matter power spectra by gridding the particles onto a mesh (\\(2048^3\\) or finer) with triangle-shaped cloud mass assignment.
-We then Fourier transform the density field, convert the result to a power spectrum, de-convolve the TSC-aliased window function from
+We then normalize the field to an overdensity, Fourier transform the overdensity, convert the result to a power spectrum, de-convolve the TSC-aliased window function from
 Jeong (2010), and bin in spherical annuli.  The number of mesh cells that fall into each annulus is recorded as N_modes in the third
 column of the csv file.
 

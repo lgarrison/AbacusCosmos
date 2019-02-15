@@ -28,6 +28,8 @@ Code: **GRAND-HOD**: <https://github.com/SandyYuan/GRAND-HOD>
 <div markdown="1" class="paper">
 Main code paper: _Garrison, et al._ (in prep.)
 
+Most detailed published description of Abacus: **A High-Fidelity Realization of the Euclid Code Comparison N-body Simulation with Abacus**, _Garrison \& Eisenstein_ (2018): <https://arxiv.org/abs/1810.02916>
+
 Far-field method paper: in prep.
 </div>
 

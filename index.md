@@ -20,7 +20,7 @@ may also be helpful.
 
 # About
 The Abacus Cosmos suite was run by [Lehman Garrison](http://lgarrison.github.io/) on the GPU nodes of the University of Arizona's
-[El Gato super computer](http://elgato.arizona.edu/) using the new N-body code Abacus.  Abacus is written by Lehman Garrison, Doug Ferrer, Daniel Eisenstein, Marc Metchnik, and Phil Pinto.  See the [Papers]({{ site.baseurl }}{% link papers.md %}) for more information.
+[El Gato super computer](http://elgato.arizona.edu/) using the new N-body code Abacus.  Abacus is written by Lehman Garrison, Doug Ferrer, Nina Maksimova, Daniel Eisenstein, Marc Metchnik, and Phil Pinto.  See the [Papers]({{ site.baseurl }}{% link papers.md %}) for more information.
 </div>
 
 <div class="column">

@@ -118,6 +118,8 @@ To re-generate the initial conditions for a given sim, make a copy of the `abacu
 - `ZD_PLT_filename`: The PLT eigenmodes file.  This is included with the zeldovich-PLT code (probably `eigmodes128`).
 - `ZD_Pk_filename`: The input power spectrum file (i.e. the CAMB output file).  This is included with each sim as `info/camb_matterpower.dat`.
 
+Furthermore, zeldovich-PLT underwent an upgrade in November 2019, rendering it necessary to specify `ZD_Version = 1` to generate legacy AbacusCosmos ICs.  The code will not run if `ZD_Version` is absent.
+
 ### Note about *-0 simulations
 Due to an oversight in an earlier version of zeldovich-PLT, `ZD_Seed = 0` used a time-based seed whose value was not logged.  Thus, it is impossible to reconstruct intial conditions for those sims.  This should only affect the `emulator*00-0` boxes; none of the more recent simulations use `ZD_Seed = 0`.
 

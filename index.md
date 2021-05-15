@@ -12,7 +12,9 @@ and initial conditions. Each of these data products is described in
 the simulations are described in [Simulations]({{ site.baseurl }}{% link simulations.md %}).
   
 ## AbacusSummit
-In 2020, Abacus was used to produce a new, larger set of simulations called [AbacusSummit](abacussummit.readthedocs.io/).
+In 2020, Abacus was used to produce a new, larger set of simulations called [AbacusSummit](https://abacussummit.readthedocs.io/).
+New users may be interested in using that suite instead, although full data access may be more challenging to arrange, as the
+data volume is much larger than AbacusCosmos.
 
 # Problems?
 If you encounter any problems with the catalogs, please

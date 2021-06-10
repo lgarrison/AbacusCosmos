@@ -2,7 +2,7 @@
 layout: default
 ---
 # Overview
-All simulation data products can be browsed at <http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/>.
+All simulation data products can be browsed at <https://nbody.rc.fas.harvard.edu/public/AbacusCosmos/>.
 
 You'll probably want to use a utility like `wget` or `curl` to recursively download the catalogs.
 The following tool will help you build a `wget` command to download the desired files.

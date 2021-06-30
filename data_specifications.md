@@ -257,7 +257,7 @@ You will usually want to parse the `header` file for analysis tasks.  If you are
 
 # Important parameters
 We collect the most important simulation parameters here for convenience.  These are values can all be found in `info/abacus.par` or `zZ.ZZZ/header`.
-If something isn't covered here, the [Abacus user guide](http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/abacus_user_guide_public.pdf) contains detailed descriptions of all parameters.
+If something isn't covered here, the [Abacus user guide](https://nbody.rc.fas.harvard.edu/public/AbacusCosmos/abacus_user_guide_public.pdf) contains detailed descriptions of all parameters.
 
 | **Name** | **Type** | **Units** | **Description** |
 |:---- |:---- |:----- |:----------- |

@@ -41,7 +41,7 @@ function build_regex() {
     var boxes = document.getElementsByClassName('chk');
     
     var base_command = "wget -r -nH -np --cut-dirs=2 -R 'index.html*' --accept-regex=";
-    var base_url = "http://nbody.rc.fas.harvard.edu/public/AbacusCosmos/";
+    var base_url = "https://nbody.rc.fas.harvard.edu/public/AbacusCosmos/";
     var regex = "(_products/$|info/";  // always include _product and info directories
     var urls = "";
     var reject_regex = "";  // might be a no-op

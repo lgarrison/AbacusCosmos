@@ -13,8 +13,8 @@ the simulations are described in [Simulations]({{ site.baseurl }}{% link simulat
   
 ## AbacusSummit
 In 2020, Abacus was used to produce a new, larger set of simulations called [AbacusSummit](https://abacussummit.readthedocs.io/).
-New users may be interested in using that suite instead, although full data access may be more challenging to arrange, as the
-data volume is much larger than AbacusCosmos.
+New users may be interested in using that suite instead.  Besides improvements to the resolution of the simulations, the
+software tools to interact with the simulation data are also more mature.
 
 # Problems?
 If you encounter any problems with the catalogs, please

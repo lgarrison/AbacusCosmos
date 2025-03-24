@@ -21,9 +21,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"></script>
     <title>{{ site.title | default: site.github.repository_name }} </title>
     {% seo %}
+
+    <style>
+      .deprecation-banner {
+        background-color: #ff6060;
+        color: #000000;
+        text-align: center;
+        padding: 10px;
+        font-weight: bold;
+        border: 1px solid #cc0000;
+        margin-bottom: 10px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+    </style>
   </head>
 
   <body>
+    <div class="deprecation-banner">
+      ⚠️ AbacusCosmos has been superseded by <a href="https://abacussummit.readthedocs.io/">AbacusSummit</a>. This download portal has been retired. Thank you for your interest in Abacus!
+    </div>
     <div id="container">
       <div class="inner">
 
